@@ -1,9 +1,9 @@
 [package]
 name = "pake-cpace"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Frank Denis <github@pureftpd.org>"]
 edition = "2018"
-description = "CPace, a balanced PAKE."
+description = "A simple implementation of CPace, a balanced PAKE."
 keywords = ["cpace", "crypto", "pake"]
 repository = "https://github.com/jedisct1/rust-cpace"
 homepage = "https://github.com/jedisct1/rust-cpace"
