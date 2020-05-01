@@ -1,5 +1,5 @@
 [package]
-name = "cpace"
+name = "pake-cpace"
 version = "0.1.0"
 authors = ["Frank Denis <github@pureftpd.org>"]
 edition = "2018"
