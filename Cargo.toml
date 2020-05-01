@@ -1,0 +1,21 @@
+[package]
+name = "cpace"
+version = "0.1.0"
+authors = ["Frank Denis <github@pureftpd.org>"]
+edition = "2018"
+description = "CPace, a balanced PAKE."
+keywords = ["cpace", "crypto", "pake"]
+repository = "https://github.com/jedisct1/rust-cpace"
+homepage = "https://github.com/jedisct1/rust-cpace"
+categories = ["algorithms", "cryptography", "no-std"]
+license = "ISC"
+
+[dependencies]
+curve25519-dalek = "2.0"
+getrandom = { version = "0.1", default-features = false }
+hmac-sha512 = "0.1"
+
+[profile.release]
+lto = true
+panic = "abort"
+opt-level = 3
