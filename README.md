@@ -4,7 +4,7 @@
 
 A CPace implementation for Rust.
 
-This is a port of the [CPace implementation for libsodium](https://github.com/jedisct1/cpcace).
+This is a port of the [CPace implementation for libsodium](https://github.com/jedisct1/cpace).
 
 ## Blurb
 
