@@ -1,6 +1,6 @@
 [package]
 name = "pake-cpace"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Frank Denis <github@pureftpd.org>"]
 edition = "2018"
 description = "A simple implementation of CPace, a balanced PAKE."
@@ -9,6 +9,7 @@ repository = "https://github.com/jedisct1/rust-cpace"
 homepage = "https://github.com/jedisct1/rust-cpace"
 categories = ["algorithms", "cryptography", "no-std"]
 license = "ISC"
+readme = "README.md"
 
 [dependencies]
 curve25519-dalek = "2.0"
