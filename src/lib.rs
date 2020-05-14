@@ -5,6 +5,7 @@ use core::fmt;
 use curve25519_dalek::{
     ristretto::{CompressedRistretto, RistrettoPoint},
     scalar::Scalar,
+    traits::IsIdentity,
 };
 use getrandom::getrandom;
 use hmac_sha512::{Hash, BLOCKBYTES};
@@ -119,6 +120,9 @@ impl CPace {
         ya: RistrettoPoint,
         yb: RistrettoPoint,
     ) -> Result<SharedKeys, Error> {
+        if op.is_identity() {
+            return Err(Error::InvalidPublicKey);
+        }
         let p = op * self.r;
         let mut st = Hash::new();
         st.update(DSI2);
