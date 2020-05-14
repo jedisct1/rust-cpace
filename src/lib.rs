@@ -16,7 +16,7 @@ pub const STEP2_PACKET_BYTES: usize = 32;
 pub const SHARED_KEY_BYTES: usize = 32;
 
 const DSI1: &str = "CPaceRistretto255-1";
-const DSI2: &str = "CPaceRistretto255-1";
+const DSI2: &str = "CPaceRistretto255-2";
 
 #[derive(Debug)]
 pub enum Error {
