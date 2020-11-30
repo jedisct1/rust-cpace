@@ -1,6 +1,6 @@
 [package]
 name = "pake-cpace"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["Frank Denis <github@pureftpd.org>"]
 edition = "2018"
 description = "A simple implementation of CPace, a balanced PAKE."
@@ -13,7 +13,7 @@ readme = "README.md"
 
 [dependencies]
 curve25519-dalek = "3.0"
-getrandom = { version = "0.1", default-features = false }
+getrandom = { version = "0.2", default-features = false }
 hmac-sha512 = "0.1"
 
 [profile.release]
