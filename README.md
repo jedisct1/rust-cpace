@@ -33,8 +33,8 @@ let step2 = CPace::step2(&client.packet(), "password", "client", "server", Some(
 let shared_keys = client.step3(&step2.packet()).unwrap();
 
 // both parties now have the same set of shared keys
-assert_eq!(shared_keys.k1, step2.shared_keys.k1);
-assert_eq!(shared_keys.k2, step2.shared_keys.k2);
+assert_eq!(shared_keys.k1, step2.shared_keys().k1);
+assert_eq!(shared_keys.k2, step2.shared_keys().k2);
 ```
 
 ## Notes
