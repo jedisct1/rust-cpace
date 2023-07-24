@@ -12,7 +12,7 @@ license = "ISC"
 readme = "README.md"
 
 [dependencies]
-curve25519-dalek = "3.0"
+curve25519-dalek = "4.0"
 getrandom = { version = "0.2", default-features = false }
 hmac-sha512 = "1.0"
 
