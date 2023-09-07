@@ -165,6 +165,7 @@ impl CPace {
         let mut step2_packet = [0u8; STEP2_PACKET_BYTES];
         step2_packet.copy_from_slice(ctx.p.compress().as_bytes());
         let ya = CompressedRistretto::from_slice(ya)
+            .map_err(|_| Error::InvalidPublicKey)?
             .decompress()
             .ok_or(Error::InvalidPublicKey)?;
         let shared_keys = ctx.finalize(ya, ya, ctx.p)?;
@@ -176,6 +177,7 @@ impl CPace {
 
     pub fn step3(&self, step2_packet: &[u8; STEP2_PACKET_BYTES]) -> Result<SharedKeys, Error> {
         let yb = CompressedRistretto::from_slice(step2_packet)
+            .map_err(|_| Error::InvalidPublicKey)?
             .decompress()
             .ok_or(Error::InvalidPublicKey)?;
         self.finalize(yb, self.p, yb)
