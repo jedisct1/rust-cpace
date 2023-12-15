@@ -1,6 +1,6 @@
 [package]
 name = "pake-cpace"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["Frank Denis <github@pureftpd.org>"]
 edition = "2018"
 description = "A simple implementation of CPace, a balanced PAKE."
@@ -11,9 +11,14 @@ categories = ["algorithms", "cryptography", "no-std"]
 license = "ISC"
 readme = "README.md"
 
+[target.'cfg(all(any(target_arch = "wasm32", target_arch = "wasm64"), target_os = "unknown"))'.dependencies]
+getrandom = { version = "0.2", optional = false, default-features = false, features = ["js"] }
+
+[target.'cfg(not(all(any(target_arch = "wasm32", target_arch = "wasm64"), target_os = "unknown")))'.dependencies]
+getrandom = { version = "0.2", optional = false, default-features = false }
+
 [dependencies]
 curve25519-dalek = "4.1"
-getrandom = { version = "0.2", default-features = false }
 hmac-sha512 = "1.1"
 
 [profile.release]
